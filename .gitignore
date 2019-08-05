@@ -43,3 +43,6 @@ Desktop.ini
 .merge_file*
 
 !.mvn/wrapper/maven-wrapper.jar
+
+Testi/*
+Testi2/*
