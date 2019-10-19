@@ -1,15 +1,15 @@
 package com.whatever.school.domain;
 
-import com.whatever.school.domain.validators.ValidSchoolNumber;
+import com.whatever.school.annotation.schoolNumber.ValidSchoolNumber;
 
 import javax.persistence.*;
-import javax.validation.constraints.*;
-import java.util.List;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "SCHOOL_ACCOUNT")
 @ValidSchoolNumber
-public class SchoolAccount extends Person {
+public class SchoolAccount extends PersonDetails {
 
     @NotNull
     @NotBlank
@@ -19,14 +19,7 @@ public class SchoolAccount extends Person {
     @Enumerated(EnumType.STRING)
     private SchoolRole role;
 
-    public SchoolAccount(
-            @NotNull @NotBlank @Size(min = 1, max = 30) String firstName,
-            @NotNull @NotBlank @Size(min = 1, max = 30) String lastName,
-            @NotNull @NotBlank @Email String email,
-            @NotNull @NotBlank @Pattern(regexp = "^s[0-9]{6}$") String number,
-            List<Program> programs) {
-        super(firstName, lastName, email);
-        this.number = number;
+    public SchoolAccount() {
     }
 
     public String getNumber() {

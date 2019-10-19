@@ -22,7 +22,6 @@ public class Program extends BaseEntity {
     @NotNull
     @NotBlank
     @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable()
     private Set<Course> courses;
 
     public Integer getTotalStudyPoints(){

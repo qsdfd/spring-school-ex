@@ -8,7 +8,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @MappedSuperclass
-public abstract class Person extends BaseEntity{
+public abstract class PersonDetails extends BaseEntity {
     @NotNull
     @NotBlank
     @Size(min = 1, max = 30)
@@ -26,12 +26,6 @@ public abstract class Person extends BaseEntity{
     @Email
     @Column(name = "EMAIL", unique = true)
     protected String email;
-
-    protected Person(@NotNull @NotBlank @Size(min = 1, max = 30) String firstName, @NotNull @NotBlank @Size(min = 1, max = 30) String lastName, @NotNull @NotBlank @Email String email) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-    }
 
     public String getFirstName() {
         return firstName;

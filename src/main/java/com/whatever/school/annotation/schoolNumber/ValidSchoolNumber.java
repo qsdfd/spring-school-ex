@@ -1,4 +1,4 @@
-package com.whatever.school.domain.validators;
+package com.whatever.school.annotation.schoolNumber;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;
@@ -12,7 +12,7 @@ import java.lang.annotation.Target;
 @Constraint(validatedBy = {SchoolNumberValidator.class})
 public @interface ValidSchoolNumber {
 
-    String message() default "{}";
+    String message() default "{SchoolNumber.Invalid}";
     Class<?>[] groups() default {};
     Class<? extends Payload>[] payload() default {};
 }

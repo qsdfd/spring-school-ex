@@ -22,9 +22,7 @@ public class Course extends BaseEntity{
     @Column(name = "STUDY_POINTS")
     private Integer studyPoints;
 
-    public Course(@NotNull @NotBlank @Size(min = 1, max = 100) String name, @NotNull @NotBlank Integer studyPoints) {
-        this.name = name;
-        this.studyPoints = studyPoints;
+    public Course() {
     }
 
     public String getName() {
